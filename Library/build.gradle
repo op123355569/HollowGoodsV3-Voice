@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 101
-        versionName "1.0.1"
+        versionCode 106
+        versionName "1.0.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // Enabling MultiDex Support.
         multiDexEnabled true
@@ -24,7 +24,7 @@ android {
 
     sourceSets {
         main() {
-            jniLibs.srcDirs = ['jniLibs']
+            jniLibs.srcDirs = ['src/main/jni']
         }
     }
     dataBinding {
@@ -41,7 +41,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    
+
     implementation 'com.github.op123355569:HollowGoodsV3:3.1.7'
     api files('libs/Msc.jar')
 }
