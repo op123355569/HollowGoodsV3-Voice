@@ -43,5 +43,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.op123355569:HollowGoodsV3:3.1.7'
     api files('libs/Msc.jar')
-    api files('jniLibs')
+    api fileTree(dir: 'jniLibs')
 }
