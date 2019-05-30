@@ -44,7 +44,7 @@ VoiceUtils.init(Context);
 
 ### 开始识别
 ```
-voiceUtils = new VoiceUtils(BaseActivity);
+VoiceUtils voiceUtils = new VoiceUtils(BaseActivity);
 voiceUtils.setParam(boolean);
 
 voiceUtils.setVoiceListener(VoiceListener);

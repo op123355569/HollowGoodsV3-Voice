@@ -80,9 +80,7 @@ public class VoiceUtils {
 
         //初始化识别无UI识别对象
         //使用SpeechRecognizer对象，可根据回调消息自定义界面；
-        mIat = SpeechRecognizer.createRecognizer(baseActivity, code -> {
-
-        });
+        mIat = SpeechRecognizer.createRecognizer(baseActivity, code -> LogUtils.Log("SpeechRecognizer createRecognizer code", code));
 
         //设置语法ID和 SUBJECT 为空，以免因之前有语法调用而设置了此参数；或直接清空所有参数，具体可参考 DEMO 的示例。
         mIat.setParameter(SpeechConstant.CLOUD_GRAMMAR, null);

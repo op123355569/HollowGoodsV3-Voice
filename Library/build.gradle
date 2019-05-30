@@ -14,10 +14,6 @@ android {
         // Enabling MultiDex Support.
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
-        ndk {
-            // 设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
-            abiFilters "armeabi"/*, "armeabi-v7a", "arm64-v8a", "x86","x86_64"*/
-        }
     }
     buildTypes {
         release {
@@ -41,12 +37,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     implementation 'com.github.op123355569:HollowGoodsV3:3.1.7'
-
     api files('libs/Msc.jar')
+    api files('jniLibs')
 }
