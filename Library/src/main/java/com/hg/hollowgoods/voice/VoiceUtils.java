@@ -18,7 +18,7 @@ import java.lang.reflect.Proxy;
  */
 public class VoiceUtils {
 
-    private static boolean isIncludeSDK() {
+    public static boolean isIncludeSDK() {
 
         boolean result = ReflectUtils.getClassByPackageName("com.iflytek.cloud.SpeechUtility") != null;
 
