@@ -5,7 +5,6 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.hg.hollowgoods.Constant.HGSystemConfig;
-import com.hg.hollowgoods.UI.Base.BaseActivity;
 import com.hg.hollowgoods.Util.APPUtils;
 import com.hg.hollowgoods.Util.LogUtils;
 import com.hg.hollowgoods.Util.ReflectUtils;
@@ -106,12 +105,12 @@ public class VoiceUtils {
             Manifest.permission.RECORD_AUDIO,
     };
 
-    private BaseActivity baseActivity;
+    private Context context;
     private VoiceListener voiceListener;
     private Object speechRecognizer;
 
-    public VoiceUtils(BaseActivity baseActivity) {
-        this.baseActivity = baseActivity;
+    public VoiceUtils(Context context) {
+        this.context = context;
     }
 
     public void setVoiceListener(VoiceListener voiceListener) {
@@ -140,7 +139,7 @@ public class VoiceUtils {
             } catch (Exception ignored) {
 
             }
-            speechRecognizer = ReflectUtils.invokeStaticMethod(createRecognizer, baseActivity, initListener);
+            speechRecognizer = ReflectUtils.invokeStaticMethod(createRecognizer, context, initListener);
 
             if (speechRecognizer != null) {
                 Method setParameter = ReflectUtils.getMethodByName(
