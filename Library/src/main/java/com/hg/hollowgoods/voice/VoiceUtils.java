@@ -18,8 +18,6 @@ import java.lang.reflect.Proxy;
  */
 public class VoiceUtils {
 
-    private static boolean isInit = false;
-
     private static boolean isIncludeSDK() {
 
         boolean result = ReflectUtils.getClassByPackageName("com.iflytek.cloud.SpeechUtility") != null;
@@ -29,10 +27,6 @@ public class VoiceUtils {
         }
 
         return result;
-    }
-
-    public static boolean isIsInit() {
-        return isInit;
     }
 
     public static String appId = "";
@@ -81,8 +75,6 @@ public class VoiceUtils {
                     boolean.class
             );
             ReflectUtils.invokeStaticMethod(setShowLog, HGSystemConfig.IS_DEBUG_MODEL);
-
-            isInit = true;
         }
     }
 
