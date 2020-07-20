@@ -20,13 +20,15 @@ public class VoiceUtils {
 
     public static boolean isIncludeSDK() {
 
-        boolean result = ReflectUtils.getClassByPackageName("com.iflytek.cloud.SpeechUtility") != null;
+//        boolean result = ReflectUtils.getClassByPackageName("com.iflytek.cloud.SpeechUtility") != null;
+//
+//        if (!result) {
+//            LogUtils.Log("未引用SDK");
+//        }
+//
+//        return result;
 
-        if (!result) {
-            LogUtils.Log("未引用SDK");
-        }
-
-        return result;
+        return false;
     }
 
     public static String appId = "";
